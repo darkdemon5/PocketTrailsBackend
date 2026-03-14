@@ -32,7 +32,7 @@ public class Transactions {
     @Column(name = "payment_type")
     private String paymentType;
 
-    @OneToMany
+    @OneToMany(mappedBy = "transactions", cascade = CascadeType.ALL)
     private List<Categories> categories = new ArrayList<>();
 
     private String description;

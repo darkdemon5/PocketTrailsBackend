@@ -23,6 +23,6 @@ public class Users {
     private String password;
     private ZonedDateTime createAt;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "users", cascade = CascadeType.ALL)
     private List<Transactions> transactions = new ArrayList<>();
 }

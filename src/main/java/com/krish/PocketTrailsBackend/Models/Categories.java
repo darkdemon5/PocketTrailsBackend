@@ -26,6 +26,7 @@ public class Categories {
     private String emoji;
 
     @ManyToOne
+    @JoinColumn(name = "transaction_id")
     Transactions transactions;
 
 }
