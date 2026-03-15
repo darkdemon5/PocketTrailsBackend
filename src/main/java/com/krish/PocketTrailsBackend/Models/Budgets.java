@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,29 +15,23 @@ import java.util.List;
 @NoArgsConstructor
 @Data
 @Entity
-@Table(name = "transactions")
-public class Transactions {
-
+@Table(name = "budgets")
+public class Budgets {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
-    private Users users;
-
-    private BigDecimal amount;
-
-    private String type;
-
-    @Column(name = "payment_type")
-    private String paymentType;
+    private Users user;
 
     @ToString.Exclude
-    @OneToMany(mappedBy = "transactions", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "budgets", cascade = CascadeType.ALL)
     private List<Categories> categories = new ArrayList<>();
 
-    private String description;
+    private BigDecimal monthlyLimit;
 
-    private LocalDate date;
+    private String month;
+
+    private Integer year;
 }

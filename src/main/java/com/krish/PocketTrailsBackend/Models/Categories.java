@@ -19,7 +19,7 @@ public class Categories {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
-    private Users user;
+    private Users users;
 
     private String name;
 
@@ -27,6 +27,10 @@ public class Categories {
 
     @ManyToOne
     @JoinColumn(name = "transaction_id")
-    Transactions transactions;
+    private Transactions transactions;
+
+    @ManyToOne
+    @JoinColumn(name = "budgets_id")
+    private Budgets budgets;
 
 }
