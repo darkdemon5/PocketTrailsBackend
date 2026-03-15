@@ -23,7 +23,7 @@ public class Transactions {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
-    private Users users;
+    private Users user;
 
     private Double amount;
 
